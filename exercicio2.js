@@ -1,6 +1,5 @@
+// https://leetcode.com/problems/palindrome-number/
 var isPalindrome = function(x) {
-    // let string = x.toString()
-    // let invertida = x.split('').reverse().join('');
     return x.toString().split('').reverse().join('') === x.toString()
 };
 
