@@ -1,15 +1,17 @@
 var reverse = function (x) {
-    let number = parseInt(x.toString().split('').reverse().join('')) // transforma a string em número
-    const verificaBitNegativo = ((-2) ** 31)
+    let numeroContrario = parseInt(x.toString().split('').reverse().join('')) // transforma a string em número
+    numeroContrario = Math.abs(numeroContrario)
     const verificaBitPositivo = (2 ** 31)
-    if (x > 0) {
-        number = number * (-1)
-        if ((number <= verificaBitNegativo) || (number >= verificaBitPositivo)) {
+    if (Math.abs(x) >= 0) {
+        if (numeroContrario >= verificaBitPositivo) {
             return 0
         }
-        else {
-            return mutiplicaNumero
+        else if(x<0){
+            return numeroContrario * (-1)
         }
+        return numeroContrario
     }
-    return number
 };
+
+console.log(reverse(-123))
+console.log(reverse(-2147483648))
